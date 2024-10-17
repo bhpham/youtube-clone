@@ -67,15 +67,16 @@ The architecture of the web application is designed to efficiently manage video 
    ```bash
    git clone https://github.com/yourusername/youtube-clone.git
    cd youtube-clone
-2. Install dependencies:
-  ```bash
-   npm install
-3. Setup environment variables as required:
+2. Install dependencies;
+      ```bash
+      npm install
+4. Setup environment variables as required:
 
 ## Usage
 To start the application, run:
    ```bash
-    npm run dev
+   npm run dev
+   
 
 Access the application at http://localhost:3000.
 
