@@ -1,70 +1,92 @@
 # YouTube Clone
 
-## Overview
+## Project Overview
 
-This project is a personal endeavor to create a simplified version of YouTube, enabling users to upload, download, and watch videos. The application incorporates essential functionalities while leveraging modern web technologies.
+The YouTube Clone project is a web application designed to replicate core functionalities of the popular video-sharing platform. Users can upload, download, and watch videos, providing a streamlined experience similar to that of YouTube. This project serves as an opportunity to explore modern web development technologies and architecture.
+
+## Table of Contents
+
+- [Functional Requirements](#functional-requirements)
+- [Non-Functional Requirements](#non-functional-requirements)
+- [Tech Stack](#tech-stack)
+- [System Architecture](#system-architecture)
+- [Design Architecture Flow](#design-architecture-flow)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 ## Functional Requirements
 
-- **List Videos**: Users can browse and view a list of uploaded videos.
-- **Sign-In/Sign-Out**: Users must sign in to access certain features.
-- **Upload Videos**: Authenticated users can upload their videos to the platform.
-- **Watch Videos**: Users can view videos uploaded by others.
+- **List Videos**: Users can browse and view a curated list of uploaded videos.
+- **User Authentication**: Sign-in and sign-out capabilities to manage user sessions.
+- **Upload Videos**: Authenticated users can upload their videos.
+- **Video Playback**: Users can watch videos uploaded by others.
 
 ## Non-Functional Requirements
 
-- **Scalability**: The application is designed to handle increasing loads seamlessly.
-- **Availability**: The system ensures high availability for a better user experience.
+- **Scalability**: The application is architected to handle a growing number of users and videos seamlessly.
+- **Availability**: The system ensures high availability for an optimal user experience.
 
 ## Tech Stack
 
-- **TypeScript**: For building robust and maintainable code.
-- **Next.js**: For server-side rendering and client-side functionality.
-- **Express.js**: For handling API requests.
-- **Docker**: For containerization of the application.
-- **FFmpeg**: For video processing and transcoding.
-- **Firebase Auth**: For user authentication.
+- **TypeScript**: For type safety and improved developer experience.
+- **Next.js**: For building a performant and user-friendly frontend.
+- **Express.js**: For backend API development.
+- **Docker**: For containerization and easier deployment.
+- **FFmpeg**: For handling video processing and transcoding.
+- **Firebase Auth**: For secure user authentication.
 - **Firebase Functions**: For serverless backend operations.
 - **Firebase Firestore**: For real-time data storage and retrieval.
 - **Google Cloud Storage**: For storing raw and processed video files.
-- **Google Cloud Pub/Sub**: For message handling in video processing.
+- **Google Cloud Pub/Sub**: For handling messaging in video processing.
 - **Google Cloud Run**: For hosting serverless applications.
 
 ## System Architecture
 
-The architecture of the web application is designed to efficiently manage video uploads and processing. Below is a brief description of each component:
+The architecture of the web application is designed to efficiently manage video uploads and processing. Key components include:
 
 - **Cloud Storage**: Stores both raw and processed videos uploaded by users.
-- **Pub/Sub**: Sends messages to the video processing service to trigger transcoding tasks.
-- **Cloud Run**: Hosts a non-public video processing service that transcodes videos and uploads them back to Cloud Storage.
-- **Cloud Firestore**: Maintains metadata for the videos, allowing for easy retrieval and management.
-- **Next.js App**: Serves as the client interface for the YouTube clone, making API calls to Firebase Functions to fetch and display videos.
+- **Pub/Sub**: Manages messaging to initiate video processing tasks.
+- **Cloud Run**: Hosts a non-public service for video transcoding.
+- **Cloud Firestore**: Maintains video metadata for easy retrieval.
+- **Next.js App**: Serves as the client interface, interacting with Firebase Functions for data access.
 
 ## Design Architecture Flow
 
 1. **Video Upload**: Users upload videos through the Next.js client.
-2. **Message Queue**: Upon upload, a message is sent to Cloud Pub/Sub to initiate video processing.
-3. **Transcoding**: The Cloud Run service processes the video using FFmpeg and stores the output in Cloud Storage.
-4. **Metadata Storage**: Video metadata is saved in Firestore, ensuring that all necessary information is accessible.
-5. **Video Retrieval**: The Next.js client makes requests to Firebase Functions to retrieve video data for listing and playback.
+2. **Message Queue**: A message is sent to Cloud Pub/Sub to initiate video processing.
+3. **Transcoding**: The Cloud Run service processes the video using FFmpeg and uploads the output to Cloud Storage.
+4. **Metadata Storage**: Video metadata is saved in Firestore for easy access.
+5. **Video Retrieval**: The Next.js client requests video data from Firebase Functions for display and playback.
 
-# System Architecture of the web app:
+## Installation
 
-![alt text](https://github.com/bhpham/youtube-clone/blob/main/yt-web-client/public/system_architecture.png?raw=true)
-...
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/youtube-clone.git
+   cd youtube-clone
+2. Install dependencies:
+  ```bash
+   npm install
+3. Setup environment variables as required:
 
-# Design Architecture Flow:
-1. Cloud Storage will store the raw and processed videos uploaded by users
-2. Pub/Sub will send messages to the video processing service.
-3. Cloud Run will host a non-public video processing service. After it transcodes videos, they will be uploaded to Cloud Storage.
-4. Cloud Firestore will store the metadata for the videos.
-5. Cloud Run will host a Next.js app, which will serve as the Youtube web client.
-6. The Next.js app will make API calls to Firebase Functions.
-7. Firebase Functions will fetch videos from Cloud Firestore and return them.
+## Usage
+To start the application, run:
+```bash
+  npm run dev
 
+Access the application at http://localhost:3000.
 
-## Conclusion
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
-This YouTube clone project showcases the integration of various technologies to create a scalable and efficient video-sharing platform. It serves as a testament to my skills as a software engineer and my ability to design and implement complex systems. 
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-Feel free to explore the code, contribute, or provide feedback!
+33 Acknowledgements
+Thanks to the open-source community for the tools and resources that made this project possible.
+Inspired by the functionality of popular video-sharing platforms.
+```bash
+Feel free to modify any sections to better fit your project specifics. This template adds a professional touch and organizes the information for clarity. Let me know if you need further adjustments!
