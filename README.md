@@ -74,8 +74,8 @@ The architecture of the web application is designed to efficiently manage video 
 
 ## Usage
 To start the application, run:
-```bash
-  npm run dev
+   ```bash
+   npm run dev
 
 Access the application at http://localhost:3000.
 
@@ -88,5 +88,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 33 Acknowledgements
 Thanks to the open-source community for the tools and resources that made this project possible.
 Inspired by the functionality of popular video-sharing platforms.
-```bash
-Feel free to modify any sections to better fit your project specifics. This template adds a professional touch and organizes the information for clarity. Let me know if you need further adjustments!
+   ```bash
+   Feel free to modify any sections to better fit your project specifics. This template adds a professional touch and organizes the information for clarity. Let me know if you need further adjustments!
