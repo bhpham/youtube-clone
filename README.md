@@ -75,7 +75,6 @@ The architecture of the web application is designed to efficiently manage video 
 ## Usage
 To start the application, run:
       
-      ```bash
       npm run dev
 
 Access the application at http://localhost:3000.
