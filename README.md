@@ -73,7 +73,7 @@ The architecture of the web application is designed to efficiently manage video 
 4. Setup environment variables as required:
 
 ## Usage
-   To start the application, run:
+To start the application, run:
       ```bash
       npm run dev
 
